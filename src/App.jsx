@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import Navbar from "./components/Navbar"
+import NextButton from "./components/ButtonLink"
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router-dom"
+import Home from './pages/home'
+import Task1 from './pages/task1'
+import Task2 from './pages/task2'
+import Task3 from './pages/task3'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App() {
+    const [isFrontSide, setIsFrontSide] = React.useState(true)
+
+    function flip() {
+        setIsFrontSide(prevSide => !prevSide)
+    }
+
+    return (
+        <>
+           <Router>
+                <Navbar />
+                <Routes>
+                    <Route exact path="/" element={<Home />} />
+                    <Route path="/task1" element={<Task1 onClick={flip} isFrontSide={isFrontSide} />} />
+                    <Route path="/task2" element={<Task2 onClick={flip} isFrontSide={isFrontSide} />} />
+                    <Route path="/task3" element={<Task3 onClick={flip} isFrontSide={isFrontSide} />} />
+                </Routes>
+            </Router> 
+        </>
+    )
 }
-
-export default App

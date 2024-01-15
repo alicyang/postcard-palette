@@ -1,0 +1,35 @@
+
+@font-face {
+    font-family: junicode;
+    src: url(./fonts/junicode-regularcondensed-webfont.woff);
+}
+body {
+    margin: 0;
+}
+.home {
+    font-family: "junicode", serif;
+    padding-left: 60px;
+    padding-right: 60px;
+    height: 100vh;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1, button {
+    position: relative;
+    bottom: 50px;
+}
+h1 {
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-size: 80px;
+    max-width: 850px;
+    margin: 0px;
+}
+button {
+    cursor: pointer;
+    font-family: "Epilogue", sans-serif;
+    padding: 10px;
+}

@@ -1,0 +1,8 @@
+button {
+    cursor: pointer;
+    font-family: "Epilogue", sans-serif;
+    height: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    flex: 1;
+}
